@@ -1,5 +1,9 @@
 .select{
   flex: 1 1 200px;
+  @media (max-width: 600.98px) {
+      flex: 0 1 auto;
+      width: 100%;
+  }
 }
 .image{
   width: 20px;

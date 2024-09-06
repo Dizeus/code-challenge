@@ -1,11 +1,6 @@
-import {
-  createTheme,
-  ThemeProvider,
-  Typography,
-} from "@mui/material";
+import { createTheme, ThemeProvider, Typography } from "@mui/material";
 import "./App.scss";
 import { Converter } from "./components/Converter/Converter";
-
 
 const darkTheme = createTheme({
   palette: {
@@ -13,11 +8,10 @@ const darkTheme = createTheme({
   },
 });
 function App() {
- 
   return (
     <ThemeProvider theme={darkTheme}>
       <div className="app">
-        <Typography variant="h1" gutterBottom className="title">
+        <Typography variant="h2" gutterBottom className="title">
           Crypto Currency Exchanger
         </Typography>
         <Converter />
