@@ -1,30 +1,29 @@
 // 1. I prefer moving string constants to variables.
 //    It reduces the chance of typos and makes the code more maintainable
-const OSMOSIS = "Osmosis";
-const ETHEREUM = "Ethereum";
-const ARBITRUM = "Arbitrum";
-const ZILLIQA = "Zilliqa";
-const NEO = "Neo";
+
+enum Cryptos {
+  OSMOSIS = "Osmosis",
+  ETHEREUM = "Ethereum",
+  ARBITRUM = "Arbitrum",
+  ZILLIQA = "Zilliqa",
+  NEO = "Neo"
+}
+
 
 // 1. Define priority data here
 const PRIORITIES = {
-  [OSMOSIS]: 100,
-  [ETHEREUM]: 50,
-  [ARBITRUM]: 30,
-  [ZILLIQA]: 20,
-  [NEO]: 20,
+  [Cryptos.OSMOSIS]: 100,
+  [Cryptos.ETHEREUM]: 50,
+  [Cryptos.ARBITRUM]: 30,
+  [Cryptos.ZILLIQA]: 20,
+  [Cryptos.NEO]: 20,
   default: -99,
 };
 
 // 1. To improve the code, we need to add a type "Blockchain"
 // 2. We can set "Blockchain" to string, but for more
 //    specific typing, it's better to use constant types for the cryptos
-type Blockchain =
-  | typeof OSMOSIS
-  | typeof ETHEREUM
-  | typeof ARBITRUM
-  | typeof ZILLIQA
-  | typeof NEO;
+type Blockchain = Cryptos;
 
 // 1. Add the "blockchain" type to WalletBalance
 interface WalletBalance {
